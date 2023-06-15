@@ -1,4 +1,5 @@
 #include<iostream>
+#include<fstream>
 
 using namespace std;
 
@@ -17,6 +18,9 @@ int main(){
 	
 	string opcion;
 	int numeroOpcion;
+	
+	fstream archivo;
+	string linea;
 	
 	do{
 		system("cls");	//limpia la consola
@@ -37,10 +41,40 @@ int main(){
 		
 		switch(numeroOpcion){
 			case 1:
-				cout << "opcion 1" << endl;
+				cout << "Digite la nueva entrada: ";
+				getline(cin,linea);
+				//abrir el archivo en modo append
+				archivo.open("diario.txt",ios::app);
+				
+				if( archivo.is_open() )
+				{
+					archivo << linea << endl;
+					archivo.close();
+				}
+				else
+					cout << "Archivo no existe o no tiene permisos." << endl;
 			break;
 			case 2:
-				cout << "opcion 2" << endl;
+				//abrir el archivo en modo lectura (input)
+				archivo.open("diario.txt",ios::in);
+				if( archivo.is_open() )
+				{
+					int n = 0;	//contador de lineas
+					while(!archivo.eof())
+					{
+						getline(archivo,linea);
+						n++;	//sumar 1 al contador de lineas
+						
+						cout << n << "\t" << linea << endl;
+						
+						//hacer una pausa cada diez lineas
+						if( n%10 == 0 )
+							system("pause");
+					}
+					archivo.close();	//cerrar el archivo
+				}
+				else
+					cout << "Archivo no existe o no tiene permisos." << endl;
 			break;
 			case 3:
 				cout << "Adios" << endl;

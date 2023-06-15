@@ -1,0 +1,23 @@
+hoy comienza el dia con un cafe
+voy a resolver problemas de caja
+resolvi problemas de caja
+sali al daily
+volvi del daily
+fui por un snack
+resolvi problemas de clientes
+sali a almorzar
+volvi de almorzar
+trabaje como esclavo hasta las 5 PM
+sali a casa
+comienza otro dia, otrocafe
+hoy toca reunion con QA
+preparo documentacion
+voy a reunion con QA
+todo sale bien, solo hay que resolver poblemas en formatos de salida de reporte de ventas
+procedo a corregir problemas de salida
+subo al repositorio de pruebas codigo con problema resuelto
+espero a que QA lo revise
+pruebas superadas
+procedo a hacer push de los cambios a produccion
+saldo a almorzar
+me siento mal reporto a RRHH y vuelvo a casa
