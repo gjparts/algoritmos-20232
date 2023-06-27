@@ -4,6 +4,11 @@ using namespace std;
 
 //prototipos de funcion
 void elevarArregloAlCuadrado( int *arreglo, int tamano );
+/*Hacer una funcion que para un arreglo
+apuntado de numeros float altere
+todos sus elementos diviendo cada uno entre dos.
+Imprimir el arreglo resultante.*/
+void mitadArreglo( float *arreglo, int tamano );
 
 int main()
 {
@@ -30,14 +35,30 @@ int main()
 	for( int i = 0; i < 6; i++ )
 		cout << numeros[i] << endl;
 	
+	float cifras[] = { 10, 5, 2 };
+	
+	mitadArreglo(cifras,3);
+	cout << "Arreglo de cifras:" <<endl;
+	for( int i = 0; i < 3; i++ )
+		cout << cifras[i] << endl;
+	
 	return 888;
 }
-
+//implementacion
 void elevarArregloAlCuadrado( int *arreglo, int tamano ){
 	for( int i = 0; i < tamano; i++ ){
 		arreglo[i] = pow(arreglo[i], 2);
 	}
 }
+
+void mitadArreglo( float *arreglo, int tamano ){
+	for( int i = 0; i < tamano; i++ ){
+		arreglo[i] = arreglo[i]/2;
+	}
+}
+
+
+
 
 
 
