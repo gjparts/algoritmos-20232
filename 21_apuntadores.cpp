@@ -1,5 +1,6 @@
 #include<iostream>
 #include<cmath>
+#include<time.h>
 using namespace std;
 
 //prototipos de funcion
@@ -9,6 +10,10 @@ apuntado de numeros float altere
 todos sus elementos diviendo cada uno entre dos.
 Imprimir el arreglo resultante.*/
 void mitadArreglo( float *arreglo, int tamano );
+/*hacer una funcion que llene todos los elementos de
+un arreglo apuntado de numeros enteros con numeros
+al azar entre 1 y 99.*/
+void llenarArreglo( int *arreglo, int tamano );
 
 int main()
 {
@@ -41,7 +46,13 @@ int main()
 	cout << "Arreglo de cifras:" <<endl;
 	for( int i = 0; i < 3; i++ )
 		cout << cifras[i] << endl;
-	
+		
+	int arregloX[11];
+	cout << "Arreglo de numeros al azar: " << endl;
+	llenarArreglo(arregloX,11);
+	for( int i = 0; i < 11; i++ )
+		cout << arregloX[i] << endl;
+		
 	return 888;
 }
 //implementacion
@@ -57,6 +68,12 @@ void mitadArreglo( float *arreglo, int tamano ){
 	}
 }
 
+void llenarArreglo( int *arreglo, int tamano ){
+	srand(time(NULL));
+	for( int i = 0; i < tamano; i++ ){
+		arreglo[i] = rand()%(99-1+1)+1;
+	}
+}
 
 
 
