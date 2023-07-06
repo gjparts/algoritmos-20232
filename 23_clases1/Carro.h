@@ -39,6 +39,30 @@ class Carro{
 			this->color = "No tiene";
 			this->anio = 0;
 		}
+		//constructor con parametros
+		Carro(string marca, string modelo){
+			this->marca = marca;
+			this->modelo = modelo;
+			this->color  = "No tiene";
+			this->anio = 0;		
+		}
+		//constructor con parametros
+		Carro(string marca, string modelo, string color, int anio){
+			this->marca = marca;
+			this->modelo = modelo;
+			this->color  = color;
+			this->anio = anio;		
+		}
+		//metodos publicos
+		void encender(){
+			cout << "El carro " << this->marca << " ha sido encendido." << endl;
+		}
+		void apagar(){
+			cout << "El carro " << this->marca << " ha sido apagado." << endl;
+		}
 };
 
 #endif
+
+
+

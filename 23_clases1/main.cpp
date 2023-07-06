@@ -19,6 +19,15 @@ int main(){
 	cout << "Color de c1: " << c1->color << endl;
 	cout << "Anio de c1: " << c1->anio << endl;
 	
+	c1->encender();
+	c1->apagar();
+	c1->encender();
+	c1->apagar();
+	c1->encender();
+	c1->apagar();
+	c1->encender();
+	c1->apagar();
+	
 	//declaramos variable c2 de tipo Carro
 	//pero al no usar el constructor
 	//no es un objeto porque no le dimos memoria
@@ -26,12 +35,58 @@ int main(){
 	//c2 tiene memoria CERO por lo tanto es NULL
 	Carro *c2;
 	cout << "Direccion de memoria de c2: " << c2 << endl;
-	
+	/*
 	//solo si el carro fuera diferente de NULL podemos manipularlo
 	if( c2 != NULL ){
 		c2->marca = "Honda";
 		cout << "Marca de c2: " << c2->marca << endl;
-	}
+	}*/
+	Carro *c3 = new Carro("Honda","Civic");
+	cout << "Marca de c3: " << c3->marca << endl;
+	cout << "Modelo de c3: " << c3->modelo << endl;
+	cout << "Color de c3: " << c3->color << endl;
+	cout << "Anio de c3: " << c3->anio << endl;
+	
+	Carro *c4 = new Carro("Pontiac","Vibe","Azul",2007);
+	cout << "Marca de c4: " << c4->marca << endl;
+	cout << "Modelo de c4: " << c4->modelo << endl;
+	cout << "Color de c4: " << c4->color << endl;
+	cout << "Anio de c4: " << c4->anio << endl;
+	
+	Carro *c5 = new Carro("Ford","Ranger");
+	c5->color = "Blanco";
+	c5->anio = 2022;
+	c5->marca = "FORD";
+	
+	cout << "Marca de c5: " << c5->marca << endl;
+	cout << "Modelo de c5: " << c5->modelo << endl;
+	cout << "Color de c5: " << c5->color << endl;
+	cout << "Anio de c5: " << c5->anio << endl;
+	
+	string x, y, z;
+	int a;
+	cout << "Ingrese marca: ";
+	getline(cin,x);
+	cout << "Ingrese modelo: ";
+	getline(cin,y);
+	cout << "Ingrese anio: ";
+	cin >> a;
+	cout << "Ingrese color: ";
+	cin.ignore();	//evitar bug, venimos de leer un int
+	getline(cin,z);
+	
+	//crear objeto en base a lo leido
+	Carro *c6 = new Carro(x,y,z,a);
+	cout << "Marca de c6: " << c6->marca << endl;
+	cout << "Modelo de c6: " << c6->modelo << endl;
+	cout << "Color de c6: " << c6->color << endl;
+	cout << "Anio de c6: " << c6->anio << endl;
 	
 	return 123;
 }
+
+
+
+
+
+
