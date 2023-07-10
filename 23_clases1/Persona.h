@@ -2,19 +2,26 @@
 #define PERSONA_H
 
 #include<iostream>
+#include<stdexcept>
 using namespace std;
 
 class Persona{
 	private:
-	public:
-		//atributos publicos
-		string nombre;
+		//atributos privados
 		int edad;
 		char genero;
-		string identidad;
 		char estadoCivil;
+	public:
+		//atributos publicos
+		string nombre;		
+		string identidad;
 		//constructores
 		//constructor sin parametros
+		/*
+		//reutilizar constructor con 5 param. para el constr. sin param.
+		Persona() : Persona("no tiene",0,"No definida",'X','X') {
+		}
+		*/
 		Persona(){
 			this->nombre = "No tiene";
 			this->edad = 0;
@@ -23,6 +30,11 @@ class Persona{
 			this->estadoCivil = 'X';
 		}
 		//constructor con tres parametros
+		/*
+		//reutilizar constructor con 5 param. para el constr. con 3 param.
+		Persona(string nombre, string identidad, int edad) :
+		Persona(nombre,edad,identidad,'X','X'){	
+		}*/
 		Persona(string nombre, string identidad, int edad){
 			this->nombre = nombre;
 			this->edad = edad;
@@ -39,7 +51,7 @@ class Persona{
 			this->identidad = identidad;
 			this->estadoCivil = estadoCivil;
 		}
-		//metodo
+		//metodos
 		void imprimir(){
 			cout << "*********** PERSONA ************" << endl;
 			cout << "Nombre: " << this->nombre << endl;
@@ -47,6 +59,18 @@ class Persona{
 			cout << "Identidad: " << this->identidad << endl;
 			cout << "Genero: " << this->genero << endl;
 			cout << "Estado Civil: " << this->estadoCivil << endl;
+		}
+		//setters y getters
+		//asignar la edad a la persona, la edad debe ser un numero >= 0
+		void setEdad(int edad){
+			if( edad >= 0 )
+				this->edad = edad;	//edad aceptada
+			else
+				throw invalid_argument("edad debe ser >= 0");
+		}
+		//obtener el valor almacenado en edad
+		int getEdad(){
+			return this->edad;
 		}
 };
 
