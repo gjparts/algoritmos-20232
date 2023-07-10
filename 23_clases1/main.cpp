@@ -1,9 +1,17 @@
 #include<iostream>
 #include "Carro.h"
+#include "Persona.h"
 
 using namespace std;
 
 int main(){
+	Persona *p1 = new Persona();
+	p1->imprimir();
+	Persona *p2 = new Persona("Fenestacio Ruiz","231231213",40);
+	p2->imprimir();
+	Persona *p3 = new Persona("Josue",10,"2131",'M','S');
+	p3->imprimir();
+	
 	//instanciar un nuevo objeto de clase Carro
 	Carro *c1 = new Carro();
 	cout << "Direccion de memoria de c1: " << c1 << endl;
@@ -33,14 +41,15 @@ int main(){
 	//no es un objeto porque no le dimos memoria
 	//o sea c2 no esta instanciado
 	//c2 tiene memoria CERO por lo tanto es NULL
-	Carro *c2;
+	Carro *c2 = NULL;
 	cout << "Direccion de memoria de c2: " << c2 << endl;
-	/*
+	
 	//solo si el carro fuera diferente de NULL podemos manipularlo
 	if( c2 != NULL ){
 		c2->marca = "Honda";
 		cout << "Marca de c2: " << c2->marca << endl;
-	}*/
+	}
+	
 	Carro *c3 = new Carro("Honda","Civic");
 	cout << "Marca de c3: " << c3->marca << endl;
 	cout << "Modelo de c3: " << c3->modelo << endl;
