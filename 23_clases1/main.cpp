@@ -6,7 +6,10 @@ using namespace std;
 
 int main(){
 	Persona *p1 = new Persona();
-	p1->setEdad(99);
+	p1->setEdad(99);	
+	p1->setGenero('M');
+	cout << p1->getEdad() << endl;
+	
 	p1->imprimir();
 	cout << "La edad de p1 es " << p1->getEdad() << endl;
 	

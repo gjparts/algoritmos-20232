@@ -37,7 +37,7 @@ class Persona{
 		}*/
 		Persona(string nombre, string identidad, int edad){
 			this->nombre = nombre;
-			this->edad = edad;
+			this->setEdad(edad);	//validar la edad enviada por el constr.
 			this->genero = 'X';
 			this->identidad = identidad;
 			this->estadoCivil = 'X';
@@ -46,8 +46,8 @@ class Persona{
 		Persona(string nombre, int edad, string identidad,
 				char genero, char estadoCivil ){
 			this->nombre = nombre;
-			this->edad = edad;
-			this->genero = genero;
+			this->setEdad(edad);	//validar la edad enviada por el constr.
+			this->setGenero(genero); //validar genero enviado por el constr.
 			this->identidad = identidad;
 			this->estadoCivil = estadoCivil;
 		}
@@ -72,6 +72,27 @@ class Persona{
 		int getEdad(){
 			return this->edad;
 		}
+		//asignar el genero de la persona, solo se acepta M F X
+		void setGenero(char genero){
+			if( genero == 'M' || genero == 'F' || genero == 'X' )
+				this->genero = genero;
+			else
+				throw invalid_argument("genero debe ser M, F o X");
+		}
+		char getGenero(){
+			return this->genero;
+		}
 };
+
+
+
+
+
+
+
+
+
+
+
 
 #endif
