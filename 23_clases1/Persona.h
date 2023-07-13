@@ -27,7 +27,7 @@ class Persona{
 			this->edad = 0;
 			this->genero = 'X';
 			this->identidad = "No definida";
-			this->estadoCivil = 'X';
+			this->estadoCivil = 'S';
 		}
 		//constructor con tres parametros
 		/*
@@ -40,7 +40,7 @@ class Persona{
 			this->setEdad(edad);	//validar la edad enviada por el constr.
 			this->genero = 'X';
 			this->identidad = identidad;
-			this->estadoCivil = 'X';
+			this->estadoCivil = 'S';
 		}
 		//constructor con todos los parametros
 		Persona(string nombre, int edad, string identidad,
@@ -49,7 +49,7 @@ class Persona{
 			this->setEdad(edad);	//validar la edad enviada por el constr.
 			this->setGenero(genero); //validar genero enviado por el constr.
 			this->identidad = identidad;
-			this->estadoCivil = estadoCivil;
+			this->setEstadoCivil(estadoCivil);
 		}
 		//metodos
 		void imprimir(){
@@ -79,8 +79,21 @@ class Persona{
 			else
 				throw invalid_argument("genero debe ser M, F o X");
 		}
+		//obtener el genero de la persona
 		char getGenero(){
 			return this->genero;
+		}
+		//asignar el estado civil de la persona, solo se acepta S, C, D, V, U
+		void setEstadoCivil(char estadoCivil){
+			if( estadoCivil == 'S' || estadoCivil == 'C' || estadoCivil == 'D' || 
+				estadoCivil == 'V' || estadoCivil == 'U' )
+				this->estadoCivil = estadoCivil;
+			else
+				throw invalid_argument("estado civil debe ser S, C, D, V, U");
+		}
+		//obtener el estado civil de la persona
+		char getEstadoCivil(){
+			return this->estadoCivil;
 		}
 };
 
